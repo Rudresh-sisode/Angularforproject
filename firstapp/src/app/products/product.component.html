@@ -1,0 +1,82 @@
+<!--<div class="jumbotron"> 
+       <h2>{{title}}</h2>
+       <p>Specifically, the contents of a paragraph are as follows: The Topic Sentence serves two functions: first, it functions as the thesis of your paragraph; second, it pushes the thesis of your essay forward and presents an arguable point. The topic sentence is usually the first or second sentence of a paragraph.</p>
+</div>
+<button class="btn btn-success">submit</button>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>SNO</th>
+                <th>Name</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>UI</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sohame</td>
+                <td>JAVA</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:teal">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:pink">
+        
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:olive">
+        
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:slateblue">
+        
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:darkgoldenrod">
+        
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:salmon">
+        
+    </div>
+</div>
+-->
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let prod of products">
+                        <td>{{prod.productName}}</td>
+                        <td>{{prod.productCode}}</td>
+                        <td>{{prod.releaseDate}}</td>
+                        <td>{{prod.price}}</td>
+                        <td>{{prod.starRating}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
