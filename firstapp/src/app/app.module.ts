@@ -5,11 +5,16 @@ import { HeaderComponent } from './header.component';
 import { ProductComponent } from './products/product.component';
 import { MyUpperPipe } from './products/myupper.pipe';
 import { DiscountPipe } from './products/discount.pipe';
+import {FormsModule} from '@angular/forms';
+import { ProductSearchPipe } from './products/productFilter.pipe';
 
 @NgModule({
     //all the module will be declare here
     imports:[
-        BrowserModule
+        BrowserModule,
+        FormsModule,
+    
+        
     ],
     //all the componenet and pipe go in declaration
     declarations:[
@@ -17,7 +22,10 @@ import { DiscountPipe } from './products/discount.pipe';
         HeaderComponent,
         ProductComponent,
         MyUpperPipe,
-        DiscountPipe
+        DiscountPipe,
+        ProductSearchPipe,
+        
+        
     ],
     //only first component
     bootstrap:[
