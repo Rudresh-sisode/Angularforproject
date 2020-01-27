@@ -54,14 +54,9 @@
     </div>
     <div class="panel-body">
         <div class="table-responsive">
-            <table class="table" *ngIf="showTable">
+            <table class="table">
                 <thead>
                     <tr>
-                        <td>
-                            <button type="button" class="btn btn-success" (click)="toggleImage()">
-                              {{showImage ? "Hide Image":"Show Image"}}
-                            </button>
-                        </td>
                         <th>Name</th>
                         <th>Code</th>
                         <th>Date</th>
@@ -72,15 +67,13 @@
                 <tbody>
 
                     <tr *ngFor="let prod of products">
-                        <td><img [src]="prod.imageUrl" *ngIf="showImage"/></td>
-                        <td>{{prod.productName | mypipe:'upper'}}</td>
-                        <!--pipe act like a value-->
-                        <td>{{prod.productCode | mypipe:'upper' }}</td>
-                        <!--some people called it pipe some called it filter-->
-                        <td>{{prod.releaseDate | date }}</td>
-                        <td>{{prod.price| discount:4 | currency:'INR'}}</td>
+                        
+                        <td>{{prod.productName}}</td>
+                        <td>{{prod.productCode}}</td>
+                        <td>{{prod.releaseDate}}</td>
+                        <td>{{prod.price}}</td>
                         <td>{{prod.starRating}}</td>
-<!--this are pipes ( | abc)-->
+
                     </tr>
 
 

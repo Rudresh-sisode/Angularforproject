@@ -3,8 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import { HeaderComponent } from './header.component';
 import { ProductComponent } from './products/product.component';
-import { MyUpperPipe } from './products/myupper.pipe';
-import { DiscountPipe } from './products/discount.pipe';
 
 @NgModule({
     //all the module will be declare here
@@ -15,9 +13,7 @@ import { DiscountPipe } from './products/discount.pipe';
     declarations:[
         AppComponent,
         HeaderComponent,
-        ProductComponent,
-        MyUpperPipe,
-        DiscountPipe
+        ProductComponent
     ],
     //only first component
     bootstrap:[
