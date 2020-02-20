@@ -10,6 +10,8 @@ import { ProductSearchPipe } from './products/productFilter.pipe';
 import { StartComponent } from './shared/star.component';
 import { ProductServicev } from './products/product.service';
 import {HttpClientModule} from '@angular/common/http';
+import { OrderComponent } from './order/order.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {HttpClientModule} from '@angular/common/http';
         MyUpperPipe,
         DiscountPipe,
         ProductSearchPipe,
-        StartComponent
+        StartComponent,
+        OrderComponent,
+        HomeComponent
     
         
         
