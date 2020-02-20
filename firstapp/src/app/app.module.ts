@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import { ProductSearchPipe } from './products/productFilter.pipe';
 import { StartComponent } from './shared/star.component';
 import { ProductServicev } from './products/product.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ProductServicev } from './products/product.service';
     imports:[
         BrowserModule,
         FormsModule,
+        HttpClientModule
     
         
     ],

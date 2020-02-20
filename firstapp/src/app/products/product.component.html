@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table" *ngIf="products && products.length; else noData">
+            <table class="table" *ngIf="products; else noData">
                 <thead>
                     <tr>
                         <td>
@@ -96,7 +96,7 @@
                              *ngIf="showImage"/></td>
                         <td style="color: teal;">{{prod.productName | mypipe:'upper'}}</td>
                         <!--pipe act like a value-->
-                        <td>{{prod.productCode | mypipe:'upper' }}</td>
+                        <td>{{prod.productCode | mypipe:'upper' }}</td> <!--also called iterpolation-->
                         <!--some people called it pipe some called it filter-->
                         <td>{{prod.releaseDate | date }}</td>
                         <td [ngStyle]="{'background-color':prod.price<25?'tomato':'skyblue'}">{{prod.price| discount:4 | currency:'INR'}}</td>

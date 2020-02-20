@@ -30,7 +30,8 @@ export class ProductComponent implements OnInit{
     products:IProduct[] ;
 
     ngOnInit():void{
-        this.products=this.productservice.getProduct();
+      this.productservice.getProduct()
+      .subscribe((data)=> this.products=data)
     }
 
     getcolor(){
