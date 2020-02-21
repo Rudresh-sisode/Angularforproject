@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './products/product-detail.component';
+import { NotFoundComponent } from './shared/NotFound.component';
 
 
 @NgModule({
@@ -24,9 +25,11 @@ import { ProductDetailsComponent } from './products/product-detail.component';
         HttpClientModule,
         RouterModule.forRoot([
           {path:'product',component:ProductComponent},
-          {path:'product/:id',component:ProductComponent},
+          {path:'product/:id',component:ProductDetailsComponent},
           {path:'orders',component:OrderComponent},
-          {path:'home',component:HomeComponent}
+          {path:'home',component:HomeComponent},
+          {path:'',redirectTo:'home',pathMatch:'full'},
+          {path:'**',component:NotFoundComponent}
         ])
 
 
@@ -42,7 +45,8 @@ import { ProductDetailsComponent } from './products/product-detail.component';
         StartComponent,
         OrderComponent,
         HomeComponent,
-        ProductDetailsComponent
+        ProductDetailsComponent,
+        NotFoundComponent
 
 
 
