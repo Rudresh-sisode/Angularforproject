@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import { HeaderComponent } from './header.component';
+import {RouterModule} from '@angular/router';
 import { ProductComponent } from './products/product.component';
 import { MyUpperPipe } from './products/myupper.pipe';
 import { DiscountPipe } from './products/discount.pipe';
@@ -12,6 +13,7 @@ import { ProductServicev } from './products/product.service';
 import {HttpClientModule} from '@angular/common/http';
 import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './products/product-detail.component';
 
 
 @NgModule({
@@ -19,9 +21,15 @@ import { HomeComponent } from './home/home.component';
     imports:[
         BrowserModule,
         FormsModule,
-        HttpClientModule
-    
-        
+        HttpClientModule,
+        RouterModule.forRoot([
+          {path:'product',component:ProductComponent},
+          {path:'product/:id',component:ProductComponent},
+          {path:'orders',component:OrderComponent},
+          {path:'home',component:HomeComponent}
+        ])
+
+
     ],
     //all the componenet and pipe go in declaration
     declarations:[
@@ -33,10 +41,11 @@ import { HomeComponent } from './home/home.component';
         ProductSearchPipe,
         StartComponent,
         OrderComponent,
-        HomeComponent
-    
-        
-        
+        HomeComponent,
+        ProductDetailsComponent
+
+
+
     ],
     //only first component
     bootstrap:[
@@ -46,7 +55,7 @@ import { HomeComponent } from './home/home.component';
     //all servicess
     providers:[
         ProductServicev
-        
+
 
     ]
 

@@ -6,7 +6,8 @@ import {Component} from '@angular/core';
    <div>
    <app-header></app-header>
    <app-prod></app-prod>
-   
+   <app-order></app-order>
+
 
    </div>`
 
