@@ -7,7 +7,9 @@ import {Router,ActivatedRoute} from '@angular/router';
 export class ProductDetailsComponent implements OnInit{
 
   id:number;
-
+  name:string;
+  image:string;
+  description:string;
   constructor(private route:ActivatedRoute){
 
   }
@@ -17,6 +19,12 @@ export class ProductDetailsComponent implements OnInit{
     this is param passing data from html to the logical prgming
     */
     this.id=this.route.snapshot.params['id'];
+    this.route.queryParams
+    .subscribe((data)=>{
+      this.name=data['name'];
+      this.image=data['img'];
+      this.description=data['desc'];
+    })
 
   }
 

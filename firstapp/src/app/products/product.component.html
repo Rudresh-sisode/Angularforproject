@@ -96,7 +96,8 @@
                              *ngIf="showImage"/></td>
                         <td style="color: teal;">
                           <!--this is param-->
-                          <a [routerLink]="['/product',prod.productId]">
+                          <a [routerLink]="['/product',prod.productId]"
+                          [queryParams]="{name:prod.productName,img:prod.imageUrl,desc:prod.description}">
                           {{prod.productName | mypipe:'upper'}}
                         </a>
                         </td>
