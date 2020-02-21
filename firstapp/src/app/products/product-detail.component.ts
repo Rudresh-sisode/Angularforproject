@@ -10,7 +10,7 @@ export class ProductDetailsComponent implements OnInit{
   name:string;
   image:string;
   description:string;
-  constructor(private route:ActivatedRoute){
+  constructor(private route:ActivatedRoute,private router:Router){
 
   }
 
@@ -26,6 +26,10 @@ export class ProductDetailsComponent implements OnInit{
       this.description=data['desc'];
     })
 
+  }
+
+  onBack():void{
+    this.router.navigate(['/product']);
   }
 
 }
