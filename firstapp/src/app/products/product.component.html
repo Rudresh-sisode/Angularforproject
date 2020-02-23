@@ -90,6 +90,7 @@
                 </thead>
                 <tbody>
 
+
                     <tr *ngFor="let prod of products | search :userText">
                         <td><img [src]="prod.imageUrl"
                             [style.width.px]="imageWidth"
