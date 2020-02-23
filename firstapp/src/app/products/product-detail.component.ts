@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnInit{
 
   }
 
+
   ngOnInit(){
     /*
     this is param passing data from html to the logical prgming
