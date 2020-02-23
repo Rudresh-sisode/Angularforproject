@@ -1,0 +1,126 @@
+<!--<div class="jumbotron">
+       <h2>{{title}}</h2>
+       <p>Specifically, the contents of a paragraph are as follows: The Topic Sentence serves two functions: first, it functions as the thesis of your paragraph; second, it pushes the thesis of your essay forward and presents an arguable point. The topic sentence is usually the first or second sentence of a paragraph.</p>
+</div>
+<button class="btn btn-success">submit</button>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>SNO</th>
+                <th>Name</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>UI</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sohame</td>
+                <td>JAVA</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:teal">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:pink">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:olive">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:slateblue">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:darkgoldenrod">
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="height:200px;background:salmon">
+
+    </div>
+</div>
+-->
+<h3 [ngStyle]="{color:getcolor()}"
+ [ngClass]="{online:serverStatus === 'Online'}">
+    Server Status is {{serverStatus}}
+</h3>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                User Input
+            </div>
+            <div class="col-md-4">
+                <input type="text"
+                [(ngModel)]="userText"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Number of product search on basis of : {{userText}}
+                    {{(products | search:userText).length}}
+                </h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="products; else noData">
+                <thead>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-success" (click)="toggleImage()">
+                              {{showImage ? "Hide Image":"Show Image"}}
+                            </button>
+                        </td>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr *ngFor="let prod of products | search :userText">
+                        <td><img [src]="prod.imageUrl"
+                            [style.width.px]="imageWidth"
+                             *ngIf="showImage"/></td>
+                        <td style="color: teal;">
+                          <!--this is param-->
+                          <a [routerLink]="['/product',prod.productId]"
+                          [queryParams]="{name:prod.productName,img:prod.imageUrl,desc:prod.description}">
+                          {{prod.productName | mypipe:'upper'}}
+                        </a>
+                        </td>
+                        <!--pipe act like a value-->
+                        <td>{{prod.productCode | mypipe:'upper' }}</td> <!--also called iterpolation-->
+                        <!--some people called it pipe some called it filter-->
+                        <td>{{prod.releaseDate | date }}</td>
+                        <td [ngStyle]="{'background-color':prod.price<25?'tomato':'skyblue'}">{{prod.price| discount:4 | currency:'INR'}}</td>
+
+                        <td>
+                            <app-star [rating]="prod.starRating"
+                            (ratingClicked)="dataRecive($event)"></app-star>
+                        </td>
+<!--this are pipes ( | abc)-->
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <ng-template #noData>
+                <img src="../../assets/imageldr.gif" style="width: 300px;" >
+            </ng-template>
+        </div>
+    </div>
+</div>
