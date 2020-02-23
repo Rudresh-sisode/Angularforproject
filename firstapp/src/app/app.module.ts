@@ -2,8 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import { HeaderComponent } from './header.component';
-import {RouterModule} from '@angular/router';
-import { ProductComponent } from './products/product.component';
+
 
 import {FormsModule} from '@angular/forms';
 
@@ -12,7 +11,7 @@ import { ProductServicev } from './products/product.service';
 import {HttpClientModule} from '@angular/common/http';
 import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
-import { ProductDetailsComponent } from './products/product-detail.component';
+
 import { NotFoundComponent } from './shared/NotFound.component';
 import { ProductModule } from './products/product.module';
 
@@ -25,10 +24,7 @@ import { ProductModule } from './products/product.module';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forRoot([
 
-
-        ]),
         ProductModule,
 
 
