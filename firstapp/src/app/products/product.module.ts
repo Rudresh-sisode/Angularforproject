@@ -15,8 +15,7 @@ import { SharedModule } from '../shared/shared.module';
   imports:[
     SharedModule,
     RouterModule.forChild([
-      {path:'product',component:ProductComponent},
-      {path:'product/:id',component:ProductDetailsComponent},
+
     ])
 
   ],

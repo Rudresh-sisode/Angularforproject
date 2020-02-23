@@ -27,10 +27,7 @@ import { ProductModule } from './products/product.module';
         HttpClientModule,
         RouterModule.forRoot([
 
-          {path:'orders',component:OrderComponent},
-          {path:'home',component:HomeComponent},
-          {path:'',redirectTo:'home',pathMatch:'full'},
-          {path:'**',component:NotFoundComponent}
+
         ]),
         ProductModule,
 
