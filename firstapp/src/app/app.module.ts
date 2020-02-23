@@ -15,6 +15,8 @@ import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './products/product-detail.component';
 import { NotFoundComponent } from './shared/NotFound.component';
+import { ProductModule } from './products/product.module';
+
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { NotFoundComponent } from './shared/NotFound.component';
           {path:'home',component:HomeComponent},
           {path:'',redirectTo:'home',pathMatch:'full'},
           {path:'**',component:NotFoundComponent}
-        ])
+        ]),
+        ProductModule
+
 
 
     ],
