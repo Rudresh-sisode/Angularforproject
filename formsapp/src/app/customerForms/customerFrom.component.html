@@ -24,10 +24,14 @@
           last name is required, boss!!
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="email.invalid && email.touched">
         <label for="email">Eamil</label>
-        <input type="email" class="form-control" name="emailid" [(ngModel)]="mycust.emailid" id="email"/>
-        <div class="alert alert-danger" *ngIf="">
+        <input type="email" class="form-control" name="emailid"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        [(ngModel)]="mycust.emailid"
+        #email="ngModel"
+        id="email"/>
+        <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
         email is required, boss!!
         </div>
       </div>
