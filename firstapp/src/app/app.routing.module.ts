@@ -5,10 +5,11 @@ import { ProductDetailsComponent } from './products/product-detail.component';
 import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './shared/NotFound.component';
+import { RouterGaurd } from './products/product-routerGaurd';
 
 const routes:Routes=[
   {path:'product',component:ProductComponent},
-          {path:'product/:id',component:ProductDetailsComponent},
+          {path:'product/:id',canActivate:[RouterGaurd],component:ProductDetailsComponent},
   {path:'orders',component:OrderComponent},
   {path:'home',component:HomeComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -19,7 +20,9 @@ const routes:Routes=[
   imports:[
     RouterModule.forRoot(routes)
   ],
-  providers:[],
+  providers:[
+    RouterGaurd
+  ],
   exports:[
     RouterModule
   ]
