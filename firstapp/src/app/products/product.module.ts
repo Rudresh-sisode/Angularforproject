@@ -7,18 +7,17 @@ import { DiscountPipe } from './discount.pipe';
 import { ProductSearchPipe } from './productFilter.pipe';
 import { ProductDetailsComponent } from './product-detail.component';
 import { ProductServicev } from './product.service';
-import { StartComponent } from '../shared/star.component';
+
 import { SharedModule } from '../shared/shared.module';
+import { AppRoutingModule } from '../app.routing.module';
 
 
 
 @NgModule({
   imports:[
     SharedModule,
-    RouterModule.forChild([
-      {path:'product',component:ProductComponent},
-          {path:'product/:id',component:ProductDetailsComponent}
-    ])
+    AppRoutingModule
+
   ],
   declarations:[
     ProductComponent,
