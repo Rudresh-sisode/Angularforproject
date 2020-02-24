@@ -31,11 +31,14 @@
         email is required, boss!!
         </div>
       </div>
-      <div class="form-group">
-        <label for="pwd">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="mycust.password" id="pwd"/>
-        <div class="alert alert-danger" *ngIf="">
-        Password is required, boss!!
+      <div class="form-group" [class.has-error]="passw.invalid && passw.touched" >
+        <label for="pwd" class="control-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="mycust.password"
+        minlength="8"
+        #passw="ngModel"
+        id="pwd" />
+        <div class="alert alert-danger" *ngIf="passw.invalid && passw.touched">
+        Min lengh is 8 char !!
         </div>
       </div>
       <div class="checkbox">
