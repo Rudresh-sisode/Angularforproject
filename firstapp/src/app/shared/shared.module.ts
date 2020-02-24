@@ -1,24 +1,23 @@
-import {NgModule} from '@angular/core'
-
-import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
-import {RouterModule} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule}from '@angular/forms';
 import { StartComponent } from './star.component';
-
-NgModule({
+@NgModule({
   imports:[
-
-    FormsModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations:[
+
+
     StartComponent
-  ]
-  ,
+  ],
   exports:[
-    FormsModule,
     CommonModule,
+    FormsModule,
     StartComponent
+
+
   ]
 })
 export class SharedModule{
