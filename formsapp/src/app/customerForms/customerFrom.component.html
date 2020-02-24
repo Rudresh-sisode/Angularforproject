@@ -6,20 +6,62 @@
   </div>
   <div class="panel-body">
     <form>
-      <div class="form-group">
-        <label for="fname">First Name</label>
-        <input type="text" class="form-control" name="firstname" id="fname"/>
-        <div class="alert alert-danger" *ngIf="">
+      <div class="form-group" [class.has-error]="firstname.invalid">
+        <label for="fname" class="control-label">First Name</label>
+        <input type="text" class="form-control" required name="firstname" [ngModel]="mycust.firstname" (ngModelChange)="firstToUpper($event)" #firstname="ngModel" id="fname"/>
+        <div class="alert alert-danger" *ngIf="firstname.invalid">
           first name is required, boss!!
         </div>
+
+        <h2>Classes</h2>
+        <h3>{{firstname.invalid}}</h3>
+        <h3></h3>
       </div>
       <div class="form-group">
         <label for="lname">Last Name</label>
-        <input type="text" class="form-control" name="lastname" id="lname"/>
+        <input type="text" class="form-control" name="lastname" [(ngModel)]="mycust.lastname" id="lname"/>
         <div class="alert alert-danger" *ngIf="">
           last name is required, boss!!
         </div>
       </div>
+      <div class="form-group">
+        <label for="email">Eamil</label>
+        <input type="email" class="form-control" name="emailid" [(ngModel)]="mycust.emailid" id="email"/>
+        <div class="alert alert-danger" *ngIf="">
+        email is required, boss!!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="mycust.password" id="pwd"/>
+        <div class="alert alert-danger" *ngIf="">
+        Password is required, boss!!
+        </div>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="prime" [(ngModel)]="mycust.prime" value="prime"/>Prime
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" [(ngModel)]="mycust.gender" value="male"/>Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" [(ngModel)]="mycust.gender" value="female"/>Female
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="delivery">Day's</label>
+      </div>
+      <!--two way binding-->
+      <select class="form-control" name="maxday" [(ngModel)]="mycust.maxday">
+        <option *ngFor="let day of maxdays">{{day}}</option>
+
+      </select><br/>
       <button type="submit" class="btn btn-success">Submit</button>
       &nbsp;
       <button type="submit" class="btn btn-danger">Reset</button>
